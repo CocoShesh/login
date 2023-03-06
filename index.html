@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Start of Async Drift Code -->
+<script>
+"use strict";
+
+!function() {
+  var t = window.driftt = window.drift = window.driftt || [];
+  if (!t.init) {
+    if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+    t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+    t.factory = function(e) {
+      return function() {
+        var n = Array.prototype.slice.call(arguments);
+        return n.unshift(e), t.push(n), t;
+      };
+    }, t.methods.forEach(function(e) {
+      t[e] = t.factory(e);
+    }), t.load = function(t) {
+      var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+      o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+      var i = document.getElementsByTagName("script")[0];
+      i.parentNode.insertBefore(o, i);
+    };
+  }
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('4kb5khr967u5');
+</script>
+<!-- End of Async Drift Code -->
+    <title>Login Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-WQ/jv4Hz4LW8dLyCTV7T1JQngw+IdIuIfPiAvpqlZ08cLZCmwVspgsf9MTJ3y7fOOOusOYI7+u6MWL0ZDgiCrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Login</h1>
+        <hr>
+      </div>
+      <form action="login.php" method="POST">
+        <div class="input-container">
+          <i class="fa fa-user icon"></i>
+          <input class="input-field" type="text" id="username" name="username" placeholder="Username" required>
+        </div>
+        <div class="input-container">
+          <i class="fa fa-lock icon"></i>
+          <input class="input-field" type="password" id="password" name="password" placeholder="Password" required>
+        </div>
+        <div class="button-container">
+          <button class="login-btn" type="submit" name="login">Login</button>
+        </div>
+        <div class="signup-container">
+          <p>Don't have an account?</p>
+          <button class="signup-btn" type="button" id="signup-btn">Sign up</button>
+        </div>
+      </form>
+      <form id="signup-form" style="display:none;" action="signup.php" method="POST">
+        <div class="input-container">
+          <i class="fa fa-user-plus icon"></i>
+          <input class="input-field" type="text" id="new-username" name="new-username" placeholder="New Username" required>
+        </div>
+        <div class="input-container">
+          <i class="fa fa-lock icon"></i>
+          <input class="input-field" type="password" id="new-password" name="new-password" placeholder="New Password" required>
+        </div>
+        <div class="button-container">
+          <button class="signup-submit-btn" type="submit" name="signup">Sign up</button>
+        </div>
+        <div class="login-container">
+          <p>Already have an account?</p>
+          <button class="login-btn" type="button" id="login-btn">Login</button>
+        </div>
+        
+      </form>
+    </div>
+    <div class="loader">
+      <div class="loader-inner"></div>
+    </div>
+    
+    <script src="script.js"></script>
+  </body>
+  </html>    
